@@ -1,0 +1,37 @@
+#slider{
+	/*height: 364px;*/
+/*min-height: 400px;*/
+height: 364px;
+overflow: auto;
+}
+
+.delete_raw {
+	cursor: pointer;
+	float: left;
+    background: teal;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 5px;
+}
+.delete_raw:after {
+    content: '';
+    height: 20px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 9px;
+}
+
+.delete_raw:before {
+    content: '';
+    height: 20px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 9px;
+}
+
+.delete_raw:hover{
+	background-color: #000;
+}
