@@ -1,4 +1,5 @@
 const list_of_goods = {};
+let product_id = 0;
 const where_is_id_rows = {};
 
 const built_table = function(){
@@ -22,10 +23,11 @@ const built_table = function(){
   $('#card_information').append(table);
 }
 
+
 built_table();
 
-const add_row = function(text, summ, amount) {
 
+const add_row = function(text, summ, amount) {
   const tmp = $(`<tr><th scope="col">${product_id}</th>\
       <td style="min-width: 70%;">${text}</td>\
       <td style="min-width: 15%;">${summ}</td>\
@@ -43,6 +45,7 @@ const add_row = function(text, summ, amount) {
   return tmp;
 }
 
+
 const sum_amount = function() {
   let total = 0;
   let amount = 0;
@@ -54,11 +57,13 @@ const sum_amount = function() {
   $('#total_amount').html(amount);
 }
 
+
 const alter_row = function(id, summ, amount){
   where_is_id_rows[id].children().eq(2).html(summ);
   where_is_id_rows[id].children().eq(3).children().last().val(amount);
   sum_amount();
 }
+
 
 $('.btn.btn-sm.btn-outline-secondary').on('click',function(event){
   const obj = {};
@@ -92,6 +97,7 @@ $('.btn.btn-sm.btn-outline-secondary').on('click',function(event){
   sum_amount();
 });
 
+
 $('#button_whole_card').on('click',function(event){
   $('.py-5.text-center.container').slideToggle(100);
   if($(this).attr('value') === 'Показать корзину'){
@@ -101,6 +107,7 @@ $('#button_whole_card').on('click',function(event){
     $(this).attr('value','Показать корзину');
   }
 });
+
 
 $(document).on('change','input', function(){
 
