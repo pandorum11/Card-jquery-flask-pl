@@ -1,8 +1,4 @@
 const list_of_goods = {};
-let flag_length = 0;
-let oldval = 0;
-let card_counter = 0;
-let product_id = 0;
 const where_is_id_rows = {};
 
 const built_table = function(){
@@ -26,10 +22,10 @@ const built_table = function(){
   $('#card_information').append(table);
 }
 
-
 built_table();
 
 const add_row = function(text, summ, amount) {
+
   const tmp = $(`<tr><th scope="col">${product_id}</th>\
       <td style="min-width: 70%;">${text}</td>\
       <td style="min-width: 15%;">${summ}</td>\
@@ -117,7 +113,3 @@ $(document).on('change','input', function(){
 
   sum_amount();
 });
-
-
-
-
